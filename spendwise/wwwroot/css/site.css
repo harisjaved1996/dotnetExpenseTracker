@@ -1,3 +1,12 @@
+/* ── Design tokens ─────────────────────────────────────────── */
+:root {
+  --sw-navy:      #1e3a5f;
+  --sw-gold:      #f5a623;
+  --sw-gold-hover:#e09517;
+  --sw-gray-bg:   #f7f8fa;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
 html {
   font-size: 14px;
 }
@@ -8,24 +17,236 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 64px;
+}
+
+main {
+  flex: 1;
+}
+
+/* ── Focus ring ────────────────────────────────────────────── */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
+.form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+/* ── Floating label placeholders ──────────────────────────── */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.sw-navbar {
+  background-color: var(--sw-navy);
+}
+
+.sw-brand {
+  color: var(--sw-gold) !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.sw-btn-gold {
+  background-color: var(--sw-gold);
+  color: #fff;
+  border: 2px solid var(--sw-gold);
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.sw-btn-gold:hover {
+  background-color: var(--sw-gold-hover);
+  border-color: var(--sw-gold-hover);
+  color: #fff;
+}
+
+.sw-btn-outline {
+  background: transparent;
+  color: var(--sw-gold);
+  border: 2px solid var(--sw-gold);
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sw-btn-outline:hover {
+  background-color: var(--sw-gold);
+  color: #fff;
+}
+
+.sw-btn-outline-light {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.sw-btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.sw-hero {
+  background: linear-gradient(135deg, var(--sw-navy) 0%, #2a4f7c 100%);
+  padding: 100px 0 80px;
+  text-align: center;
+  color: #fff;
+}
+
+.sw-hero h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sw-hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.sw-hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Features ──────────────────────────────────────────────── */
+.sw-features {
+  background-color: var(--sw-gray-bg);
+  padding: 80px 0;
+}
+
+.sw-features h2 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--sw-navy);
+  margin-bottom: 48px;
+}
+
+.sw-feature-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.sw-feature-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sw-feature-card .sw-icon {
+  font-size: 2.5rem;
+  color: var(--sw-gold);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.sw-feature-card h4 {
+  font-weight: 600;
+  color: var(--sw-navy);
+  margin-bottom: 8px;
+}
+
+.sw-feature-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── How It Works ──────────────────────────────────────────── */
+.sw-steps {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.sw-steps h2 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--sw-navy);
+  margin-bottom: 48px;
+}
+
+.sw-step-card {
+  text-align: center;
+  padding: 24px;
+}
+
+.sw-step-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--sw-gold);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.sw-step-card h4 {
+  font-weight: 600;
+  color: var(--sw-navy);
+  margin-bottom: 8px;
+}
+
+.sw-step-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+.sw-footer {
+  background-color: var(--sw-navy);
+  color: #fff;
+  padding: 20px 0;
+  font-size: 0.875rem;
+}
+
+.sw-footer-link {
+  color: var(--sw-gold);
+  text-decoration: none;
+}
+
+.sw-footer-link:hover {
+  color: var(--sw-gold-hover);
+  text-decoration: underline;
+}
+
+.sw-footer-sep {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 10px;
 }

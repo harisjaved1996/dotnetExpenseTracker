@@ -1,8 +1,75 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Home – SpendWise";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Hero Section -->
+<section class="sw-hero">
+    <div class="container">
+        <h1 class="display-4">Take Control of Your Spending</h1>
+        <p>SpendWise helps you track every expense, understand your spending habits, and reach your financial goals — all in one place.</p>
+        <div class="sw-hero-btns">
+            <a href="#" class="sw-btn-gold">Get Started</a>
+            <a href="#features" class="sw-btn-outline-light">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="sw-features">
+    <div class="container">
+        <h2>Why SpendWise?</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="sw-feature-card h-100">
+                    <i class="bi bi-cash-stack sw-icon"></i>
+                    <h4>Track Expenses</h4>
+                    <p>Log every transaction in seconds. Keep a clear record of where your money goes each day, week, and month.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="sw-feature-card h-100">
+                    <i class="bi bi-tags sw-icon"></i>
+                    <h4>Smart Categories</h4>
+                    <p>Organise spending into custom categories like Food, Transport, and Bills so you always know what's costing you most.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="sw-feature-card h-100">
+                    <i class="bi bi-bar-chart-line sw-icon"></i>
+                    <h4>Financial Insights</h4>
+                    <p>See spending summaries and trends at a glance. Make smarter decisions backed by your own real data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="sw-steps">
+    <div class="container">
+        <h2>Get Started in 3 Simple Steps</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="sw-step-card">
+                    <div class="sw-step-number">1</div>
+                    <h4>Create Account</h4>
+                    <p>Sign up in under a minute — no credit card required.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="sw-step-card">
+                    <div class="sw-step-number">2</div>
+                    <h4>Add Expenses</h4>
+                    <p>Record your spending as you go or add entries in bulk.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="sw-step-card">
+                    <div class="sw-step-number">3</div>
+                    <h4>See Your Insights</h4>
+                    <p>Instantly view summaries, top categories, and monthly totals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
