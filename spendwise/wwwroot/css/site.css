@@ -371,6 +371,59 @@ main {
   height: 100%;
 }
 
+/* ── Auth pages ────────────────────────────────────────────── */
+.sw-auth-banner {
+  background-color: var(--sw-navy);
+  color: #fff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.sw-auth-card {
+  max-width: 480px;
+  margin: 2.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+  background: #fff;
+  padding: 2.5rem;
+}
+
+.sw-role-toggle {
+  border: 1px solid var(--sw-navy);
+  border-radius: 50px;
+  overflow: hidden;
+  display: flex;
+}
+
+.sw-role-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--sw-navy);
+  padding: .5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+
+.sw-role-btn.active {
+  background: var(--sw-navy);
+  color: #fff;
+}
+
+.sw-pw-toggle {
+  background: transparent;
+  border: 1px solid #dee2e6;
+  border-left: none;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color .2s;
+}
+
+.sw-pw-toggle:hover {
+  color: var(--sw-navy);
+}
+
 /* ── Dashboard avatar ──────────────────────────────────────── */
 .sw-avatar {
   width: 36px;

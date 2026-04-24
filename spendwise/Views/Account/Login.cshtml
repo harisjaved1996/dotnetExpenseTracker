@@ -1,0 +1,69 @@
+@model spendwise.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="sw-auth-banner">
+    <h1 class="fw-bold fs-2">Welcome Back</h1>
+    <p class="mb-0 opacity-75">Sign in to your SpendWise account</p>
+</div>
+
+<div class="container">
+    <div class="sw-auth-card">
+        <div class="text-center mb-4">
+            <span class="fw-bold fs-4" style="color: var(--sw-navy);">SpendWise</span>
+        </div>
+
+        <div class="sw-role-toggle mb-4" role="group">
+            <button type="button" class="sw-role-btn active" data-role="User">User</button>
+            <button type="button" class="sw-role-btn" data-role="Admin">Admin</button>
+        </div>
+
+        <form asp-action="Login" method="post">
+            <input type="hidden" asp-for="Role" />
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-medium"></label>
+                <input asp-for="Email" class="form-control" type="email" placeholder="you@example.com" autocomplete="email" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label fw-medium"></label>
+                <div class="input-group">
+                    <input asp-for="Password" class="form-control" type="password" placeholder="••••••••" autocomplete="current-password" />
+                    <button class="sw-pw-toggle px-3" type="button" tabindex="-1" aria-label="Toggle password visibility">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4 form-check">
+                <input asp-for="RememberMe" class="form-check-input" type="checkbox" />
+                <label asp-for="RememberMe" class="form-check-label small"></label>
+            </div>
+
+            @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey(string.Empty))
+            {
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2 small"></div>
+            }
+
+            <button type="submit" class="btn w-100 fw-semibold mb-3" style="background-color: var(--sw-gold); color: #fff; padding: .65rem;">
+                Sign In
+            </button>
+        </form>
+
+        <hr class="my-3" />
+
+        <p class="text-center mb-0 small">
+            Don't have an account?
+            <a asp-controller="Account" asp-action="Register" style="color: var(--sw-gold); font-weight: 600;">Register</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
