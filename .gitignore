@@ -13,6 +13,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+obj/
+bin/
 
 # Visual Studio cache/options
 .vs/
@@ -41,6 +43,11 @@ bld/
 *.snupkg
 *.nuget.props
 *.nuget.targets
+*.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+.nuget/
 
 # dotnet
 project.lock.json
