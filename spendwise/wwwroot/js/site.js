@@ -5,19 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Role toggle — shared by Login and Register
-    document.querySelectorAll('.sw-role-toggle').forEach(function (toggle) {
-        const buttons = toggle.querySelectorAll('.sw-role-btn');
-        const hiddenInput = toggle.closest('form').querySelector('[name="Role"]');
-        buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                buttons.forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-                hiddenInput.value = btn.dataset.role;
-            });
-        });
-    });
-
     // Password visibility toggle — shared by Login and Register
     document.querySelectorAll('.sw-pw-toggle').forEach(function (btn) {
         btn.addEventListener('click', function () {

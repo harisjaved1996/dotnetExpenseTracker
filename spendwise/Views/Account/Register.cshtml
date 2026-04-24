@@ -14,13 +14,7 @@
             <span class="fw-bold fs-4" style="color: var(--sw-navy);">SpendWise</span>
         </div>
 
-        <div class="sw-role-toggle mb-4" role="group">
-            <button type="button" class="sw-role-btn active" data-role="User">User</button>
-            <button type="button" class="sw-role-btn" data-role="Admin">Admin</button>
-        </div>
-
         <form asp-action="Register" method="post">
-            <input type="hidden" asp-for="Role" />
             @Html.AntiForgeryToken()
 
             <div class="mb-3">
