@@ -65,8 +65,7 @@ The app follows standard ASP.NET Core MVC conventions with no custom layers beyo
 ### Running the app
 ```bash
 dotnet run --project spendwise
-# HTTPS: https://localhost:7147
-# HTTP:  http://localhost:5108
+HTTP:  http://localhost:5108
 ```
 
 ### EF Core migrations

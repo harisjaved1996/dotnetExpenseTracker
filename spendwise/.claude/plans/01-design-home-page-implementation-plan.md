@@ -203,7 +203,7 @@ main {
 ## Verification Steps
 
 1. Run `dotnet build --project spendwise` — must produce **0 errors, 0 warnings**
-2. Run `dotnet run --project spendwise` — open `https://localhost:7147/`
+2. Run `dotnet run --project spendwise` — open `https://localhost:5108/`
 3. Check:
    - [ ] Page title is "Home – SpendWise"
    - [ ] Navbar is navy and stays fixed on scroll

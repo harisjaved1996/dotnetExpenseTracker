@@ -250,3 +250,30 @@ main {
   color: rgba(255, 255, 255, 0.4);
   margin: 0 10px;
 }
+
+/* ── Terms & Conditions page ───────────────────────────────── */
+.sw-terms-banner {
+  background-color: var(--sw-navy);
+  color: #fff;
+  padding: 72px 0 56px;
+  text-align: center;
+}
+
+.sw-terms-banner h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sw-terms-banner p {
+  opacity: 0.75;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.sw-terms-heading {
+  border-left: 4px solid var(--sw-gold);
+  padding-left: 0.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
