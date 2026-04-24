@@ -18,6 +18,8 @@ public class HomeController : Controller
 
     public IActionResult TermsAndConditions() => View();
 
+    public IActionResult PrivacyPolicy() => View();
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

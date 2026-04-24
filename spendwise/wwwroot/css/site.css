@@ -251,6 +251,12 @@ main {
   margin: 0 10px;
 }
 
+/* ── Privacy Policy page ───────────────────────────────────── */
+.sw-section-heading {
+  border-left: 4px solid var(--sw-gold);
+  padding-left: 0.75rem;
+}
+
 /* ── Terms & Conditions page ───────────────────────────────── */
 .sw-terms-banner {
   background-color: var(--sw-navy);

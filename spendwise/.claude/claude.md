@@ -64,9 +64,14 @@ The app follows standard ASP.NET Core MVC conventions with no custom layers beyo
 
 ### Running the app
 ```bash
-dotnet run --project spendwise
+dotnet watch run --project spendwise
 HTTP:  http://localhost:5108
 ```
+
+Use `dotnet watch run` (not `dotnet run`). It enables .NET Hot Reload for C# changes:
+- Method body edits apply instantly with no restart
+- New controllers / classes trigger an automatic rebuild + restart — no manual stop needed
+- Razor Runtime Compilation (`AddRazorRuntimeCompilation`) handles `.cshtml` changes live on top of this
 
 ### EF Core migrations
 ```bash
