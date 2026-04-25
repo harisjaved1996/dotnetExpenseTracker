@@ -10,6 +10,14 @@
 
 <div class="container">
     <div class="sw-auth-card">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
         <div class="text-center mb-4">
             <span class="fw-bold fs-4" style="color: var(--sw-navy);">SpendWise</span>
         </div>
@@ -20,7 +28,7 @@
         </div>
 
         <form asp-action="Login" method="post">
-            <input type="hidden" asp-for="Role" />
+            <input type="hidden" id="roleInput" asp-for="Role" value="User" />
             @Html.AntiForgeryToken()
 
             <div class="mb-3">

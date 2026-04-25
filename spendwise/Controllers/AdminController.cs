@@ -2,10 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using spendwise.Data;
 using spendwise.Models;
+using spendwise.Services;
 
 namespace spendwise.Controllers;
 
-public class AdminController : Controller
+public class AdminController : BaseController
 {
     private readonly AppDbContext _db;
 
@@ -13,6 +14,10 @@ public class AdminController : Controller
 
     public async Task<IActionResult> Index()
     {
+        var authCheck = RequireAuth("Admin");
+        if (authCheck != null)
+            return authCheck;
+
         var model = new AdminDashboardViewModel
         {
             CategoryCount = await _db.Categories.CountAsync(),

@@ -1,13 +1,20 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using spendwise.Models;
+using spendwise.Services;
 
 namespace spendwise.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
     public IActionResult Index()
     {
+        if (IsAuthenticated)
+        {
+            return AuthRole == "Admin"
+                ? RedirectToAction("Index", "Admin")
+                : RedirectToAction("Index", "Dashboard");
+        }
         return View();
     }
 

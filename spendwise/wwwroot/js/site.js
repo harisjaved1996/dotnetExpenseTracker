@@ -5,6 +5,23 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Role toggle — Login page only
+    document.querySelectorAll('.sw-role-toggle').forEach(function (toggle) {
+        const buttons = toggle.querySelectorAll('.sw-role-btn');
+        const roleInput = document.getElementById('roleInput');
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                buttons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                if (roleInput) {
+                    roleInput.value = btn.dataset.role;
+                }
+            });
+        });
+    });
+
     // Password visibility toggle — shared by Login and Register
     document.querySelectorAll('.sw-pw-toggle').forEach(function (btn) {
         btn.addEventListener('click', function () {
